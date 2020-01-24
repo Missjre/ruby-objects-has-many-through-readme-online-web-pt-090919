@@ -17,6 +17,15 @@ end
 
 
 
+def best_tipper
+  best_tipped_meal = meals.max do |meal_a, meal_b|
+    meal_a.tip <=> meal_b.tip
+  end
+ 
+  best_tipped_meal.customer
+end
+
+
 jason = Waiter.new("Jason", 4)
 lisa = Customer.new("Lisa", 24)
 tim = Customer.new("Tim", 35)
